@@ -85,6 +85,6 @@ export class InMemoryDataService implements InMemoryDbService {
                 contenido: "Laika ):",
                 idLikes: likes
             }];
-        return { PostList:Post, likes:Like, user1 };
+        return { PostList, likes, user1 };
     }
 }

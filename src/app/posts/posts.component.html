@@ -22,4 +22,16 @@
   </div>
 </div>
 -->
+<div>
+  <label>Titulo:
+    <input #titulo />
+  </label>
+  <label>Contenido:
+    <input #contenido />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(titulo.value,contenido.value);">
+    Add
+  </button>
+</div>
 <app-post-detail [post]="selectedPost"></app-post-detail>

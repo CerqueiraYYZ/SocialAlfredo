@@ -9,13 +9,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { HttpClientModule }    from '@angular/common/http';
+import { PostSearchComponent } from './post-search/post-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
     PostDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    PostSearchComponent
   ],
   imports: [
     BrowserModule,

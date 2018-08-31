@@ -14,6 +14,7 @@ import { PostService } from '../post.service';
 })
 export class PostsComponent implements OnInit {
 posts: Post[];
+selectedPost: Post;
 
 
 onSelect(post: Post): void {
@@ -28,6 +29,8 @@ onSelect(post: Post): void {
   }
 
   post.idLikes = listaDeLikes;
+
+  this.selectedPost = post;
 }
 
 //likes del post
@@ -42,5 +45,12 @@ onSelect(post: Post): void {
     this.postService.getPosts()
       .subscribe(posts => this.posts = posts);
   }
-
+  add(titulo: string,contenido:string): void {
+    titulo = titulo.trim();
+    if (!titulo) { return; }
+    this.postService.addPost({ id:undefined,titulo,contenido,idAutor:undefined,idLikes:undefined } as Post)
+      .subscribe(post => {
+        this.posts.push(post);
+      });
+  }
 }
