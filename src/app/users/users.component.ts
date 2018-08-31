@@ -29,6 +29,7 @@ export class UsersComponent implements OnInit {
   login(){
     this.users.forEach(element => {
       if(element.name == this.name && element.password == this.password){
+        this.userService.logUser(element);
         this.loggedOut = false;
         this.loggedIn = true;
       }
@@ -38,6 +39,7 @@ export class UsersComponent implements OnInit {
   logout(){
       this.loggedOut = true;
       this.loggedIn = false;
+      this.userService.unLogUser();
   }
 
 }

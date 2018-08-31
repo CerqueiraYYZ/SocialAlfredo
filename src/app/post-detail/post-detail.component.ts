@@ -3,16 +3,19 @@ import {Post} from '../post';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { PostService }  from '../post.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-post-detail',
   templateUrl: './post-detail.component.html',
   styleUrls: ['./post-detail.component.css']
 })
+
 export class PostDetailComponent implements OnInit {
   @Input() post: Post;
+  
   constructor(
-    private route: ActivatedRoute,
+  private route: ActivatedRoute,
   private postService: PostService,
   private location: Location
   ) { }

@@ -13,7 +13,7 @@ const httpOptions = {
 })
 export class UserService {
   private usersUrl = 'api/user1';
-
+  userLogged:User;
   constructor(private http: HttpClient) { }
 
   private handleError<T>(operation = 'operation', result?: T) {
@@ -34,4 +34,11 @@ export class UserService {
       );
   }
   
+  logUser(user:User){
+    this.userLogged = user;
+  }
+
+  unLogUser(){
+    this.userLogged = undefined;
+  }
 }
