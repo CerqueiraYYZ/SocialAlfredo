@@ -10,6 +10,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { HttpClientModule }    from '@angular/common/http';
 import { PostSearchComponent } from './post-search/post-search.component';
+import { UsersComponent } from './users/users.component';
+import { LikesComponent } from './likes/likes.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { PostSearchComponent } from './post-search/post-search.component';
     PostsComponent,
     PostDetailComponent,
     DashboardComponent,
-    PostSearchComponent
+    PostSearchComponent,
+    UsersComponent,
+    LikesComponent
   ],
   imports: [
     BrowserModule,

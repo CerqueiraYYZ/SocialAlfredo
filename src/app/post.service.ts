@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Post } from './post';
-import { PostList, likes } from './mock-posts';
+import { User } from './user';
+import { PostList, likes,user1 } from './mock-posts';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -11,7 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PostService {
-  private postsUrl = 'api/PostList';  // URL to web api
+  private postsUrl = 'api/PostList'; 
 
   constructor(private http: HttpClient) { }
 

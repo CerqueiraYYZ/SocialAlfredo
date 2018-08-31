@@ -12,8 +12,10 @@ import { PostService } from '../post.service';
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
+
 export class PostsComponent implements OnInit {
 posts: Post[];
+users: User[];
 selectedPost: Post;
 
 
