@@ -1,0 +1,20 @@
+<div *ngIf="post">
+
+  <h2>{{post.name | uppercase}} Details</h2>
+  <div>
+    <span>Nombre: </span>{{post.titulo}}</div>
+  <div>
+    <span>Contenido: </span>{{post.contenido}}</div>
+  <div>
+    <span>Likes: </span>
+    <li *ngFor="let likes of post.idLikes">
+      <span class="badge">{{likes.idUser.name}}</span> {{likes.tipo}}
+    </li>
+  </div>
+  <div>
+    <label>Titulo:
+      <input [(ngModel)]="post.titulo" placeholder="titulo">
+    </label>
+  </div>
+</div>
+<button (click)="goBack()">go back</button>

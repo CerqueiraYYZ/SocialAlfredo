@@ -1,21 +1,46 @@
 import { Component, OnInit } from '@angular/core';
 import {Post} from '../post';
 import {User} from '../user';
-import {PostList} from '../mock-posts';
+import {PostList , likes} from '../mock-posts';
+import {user1} from '../mock-users';
+import { ReturnStatement } from '@angular/compiler/src/output/output_ast';
+import { Like } from 'src/app/like';
+import { PostService } from '../post.service';
+
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-posts = PostList;
+posts: Post[];
 
 
-  constructor() { }
+onSelect(post: Post): void {
+  let listaDeLikes:Like[]=[];
+  
+  for (let index = 0; index < likes.length; index++) {
+    const element = likes[index];
+    //console.log(post.idLikes[index].idUser.id+"  "+element);
+    if(post.id == element.idPost){
+      listaDeLikes.push(element);
+    }
+  }
+
+  post.idLikes = listaDeLikes;
+}
+
+//likes del post
+
+  constructor(private postService: PostService) { }
 
   ngOnInit() {
-  console.log(this.posts);
-    
+    this.getPosts();
+  }
+
+  getPosts(): void {
+    this.postService.getPosts()
+      .subscribe(posts => this.posts = posts);
   }
 
 }

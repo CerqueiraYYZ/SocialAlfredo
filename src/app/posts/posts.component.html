@@ -1,2 +1,25 @@
-<h2>{{posts[1].titulo }} Details</h2>
-<div><span>Contenido: </span>{{posts[1].contenido}}</div>
+<h2>Posts</h2>
+<ul class="heroes">
+  <li *ngFor="let post of posts">
+    <a routerLink="/detail/{{post.id}}">
+      <span class="badge">{{post.titulo}}</span> {{post.idAutor.name}}
+    </a>
+  </li>
+</ul>
+<!--
+<div *ngIf="selectedPost">
+  <h2>{{selectedPost.name | uppercase}} Details</h2>
+  <div><span>Nombre: </span>{{selectedPost.titulo}}</div>
+  <div><span>Contenido: </span>{{selectedPost.contenido}}</div>
+  <div><span>Likes: </span>
+    <li *ngFor="let likes of selectedPost.idLikes">
+    <span class="badge">{{likes.idUser.name}}</span> {{likes.tipo}}
+  </li></div>
+  <div>
+    <label>Titulo:
+      <input [(ngModel)]="selectedPost.titulo" placeholder="titulo">
+    </label>
+  </div>
+</div>
+-->
+<app-post-detail [post]="selectedPost"></app-post-detail>

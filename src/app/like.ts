@@ -2,7 +2,7 @@ import {Post} from './post';
 import {User} from './user';
 
 export class Like {
-    post:Post;
-    user:User;
+    idPost:number;
+    idUser:User;
     tipo:string;
 }
