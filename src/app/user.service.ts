@@ -34,7 +34,7 @@ export class UserService {
       );
   }
   
-  logUser(user:User){
+  loggedUser(user:User){
     this.userLogged = user;
   }
 
